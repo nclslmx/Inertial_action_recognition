@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>processor.utils package &#8212; Hierarchical_1D_CNN_for_inertial_action_recognition Final documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="processor-utils-package">
+<h1>processor.utils package<a class="headerlink" href="#processor-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-processor.utils.FLOPs_counter">
+<span id="processor-utils-flops-counter-module"></span><h2>processor.utils.FLOPs_counter module<a class="headerlink" href="#module-processor.utils.FLOPs_counter" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-processor.utils.argument_parser">
+<span id="processor-utils-argument-parser-module"></span><h2>processor.utils.argument_parser module<a class="headerlink" href="#module-processor.utils.argument_parser" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="processor.utils.argument_parser.ArgumentParser">
+<em class="property">class </em><code class="sig-prename descclassname">processor.utils.argument_parser.</code><code class="sig-name descname">ArgumentParser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">argv</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.argument_parser.ArgumentParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="processor.utils.argument_parser.ArgumentParser.get_parser">
+<em class="property">static </em><code class="sig-name descname">get_parser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">add_help</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.argument_parser.ArgumentParser.get_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create basic argument parser
+:param add_help: boolean flag to enable command line help
+:return: parser</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.argument_parser.ArgumentParser.load_arg">
+<code class="sig-name descname">load_arg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">argv</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.argument_parser.ArgumentParser.load_arg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse given arguments and store them
+:param argv: arguments from command line
+:return: parsed arguments</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.argument_parser.ArgumentParser.save_arg">
+<code class="sig-name descname">save_arg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.argument_parser.ArgumentParser.save_arg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save given arguments at predefined sessions file
+:param arg: arguments to save</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-processor.utils.file_io">
+<span id="processor-utils-file-io-module"></span><h2>processor.utils.file_io module<a class="headerlink" href="#module-processor.utils.file_io" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="processor.utils.file_io.FileIO">
+<em class="property">class </em><code class="sig-prename descclassname">processor.utils.file_io.</code><code class="sig-name descname">FileIO</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logger</span></em>, <em class="sig-param"><span class="n">work_dir</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.file_io.FileIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Module to load PyTorch components and for basic file i/o</p>
+<dl class="py method">
+<dt id="processor.utils.file_io.FileIO.load_feeder">
+<code class="sig-name descname">load_feeder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feeder</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">feeder_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.file_io.FileIO.load_feeder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize data feeder
+:param feeder: class name of feeder
+:param feeder_args: arguments for feeder
+:return: initialized feeder</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.file_io.FileIO.load_loss">
+<code class="sig-name descname">load_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loss</span></em>, <em class="sig-param"><span class="n">weight</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.file_io.FileIO.load_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize PyTorch loss function
+:param loss: class name of loss
+:return: initialized loss</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.file_io.FileIO.load_model">
+<code class="sig-name descname">load_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">dummy_input</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">model_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.file_io.FileIO.load_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load PyTorch model
+:param model: class name of model
+:param model_args: arguments for model
+:return: initialized model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.file_io.FileIO.load_optimizer">
+<code class="sig-name descname">load_optimizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimizer</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">optimizer_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.file_io.FileIO.load_optimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize PyTorch optimizer for model training
+:param optimizer: class name of optimizer
+:param model: model to optimize
+:param optimizer_args: arguments for optimizer
+:return: initialized optimizer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.file_io.FileIO.load_sampler">
+<code class="sig-name descname">load_sampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sampler</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">sampler_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.file_io.FileIO.load_sampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize data sampler
+:param sampler: class name of sampler
+:param sampler_args: arguments for sampler
+:return: initialized sampler</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.file_io.FileIO.load_scheduler">
+<code class="sig-name descname">load_scheduler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scheduler</span></em>, <em class="sig-param"><span class="n">optimizer</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">scheduler_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.file_io.FileIO.load_scheduler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize PyTorch scheduler
+:param scheduler: class name of scheduler
+:param optimizer: initialized optimizer
+:param scheduler_args: arguments for scheduler
+:return: initialized scheduler</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.file_io.FileIO.load_weights">
+<code class="sig-name descname">load_weights</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">weights_path</span></em>, <em class="sig-param"><span class="n">ignore_weights</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.file_io.FileIO.load_weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize PyTorch model with weights
+:param model: PyTorch model to initialize
+:param weights_path: path to weights
+:param ignore_weights: list of weights that should not be loaded
+:return: model with loaded weights</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.file_io.FileIO.save_weights">
+<code class="sig-name descname">save_weights</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.file_io.FileIO.save_weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save model weights
+:param model: PyTorch model
+:param name: name of weights file</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-processor.utils.logger">
+<span id="processor-utils-logger-module"></span><h2>processor.utils.logger module<a class="headerlink" href="#module-processor.utils.logger" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="processor.utils.logger.Logger">
+<em class="property">class </em><code class="sig-prename descclassname">processor.utils.logger.</code><code class="sig-name descname">Logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">work_dir</span></em>, <em class="sig-param"><span class="n">save_log</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">print_log</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.logger.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Logger for all kinds of activities</p>
+<dl class="py method">
+<dt id="processor.utils.logger.Logger.meta_precision_recall_histogram">
+<code class="sig-name descname">meta_precision_recall_histogram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recall_precision</span></em>, <em class="sig-param"><span class="n">classes_name_list</span></em>, <em class="sig-param"><span class="n">global_step</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.logger.Logger.meta_precision_recall_histogram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.logger.Logger.plot_confusion_matrix">
+<em class="property">static </em><code class="sig-name descname">plot_confusion_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ground_truth</span></em>, <em class="sig-param"><span class="n">prediction</span></em>, <em class="sig-param"><span class="n">classes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.logger.Logger.plot_confusion_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a plot of a confusion matrix
+:param ground_truth: ground truth labels
+:param prediction: predicted labels
+:param classes: class names corresponding to label indexes
+:return: plot of confusion matrix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.logger.Logger.print_log">
+<code class="sig-name descname">print_log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">log_str</span></em>, <em class="sig-param"><span class="n">print_time</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.logger.Logger.print_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log a string
+:param log_str: string to log
+:param print_time: boolean flag to enable a time stamp before the logged string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.logger.Logger.tensorboard_confusion_matrix">
+<code class="sig-name descname">tensorboard_confusion_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">ground_truth</span></em>, <em class="sig-param"><span class="n">prediction</span></em>, <em class="sig-param"><span class="n">classes</span></em>, <em class="sig-param"><span class="n">global_step</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.logger.Logger.tensorboard_confusion_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log a confusion matrix in tensorboard
+:param ground_truth: ground truth labels
+:param prediction: predicted labels
+:param classes: class names corresponding to label indexes
+:param global_step: step in training</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.logger.Logger.tensorboard_embedding">
+<code class="sig-name descname">tensorboard_embedding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">label</span></em>, <em class="sig-param"><span class="n">global_step</span></em>, <em class="sig-param"><span class="n">action_names</span></em>, <em class="sig-param"><span class="n">dangerous_act_list</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">suspicious_act_list</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.logger.Logger.tensorboard_embedding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log data embedding in tensorboard
+:param data: data to embed
+:param label: labels corresponding to data
+:param global_step: step in training</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.logger.Logger.tensorboard_log">
+<code class="sig-name descname">tensorboard_log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">global_step</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.logger.Logger.tensorboard_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log at tensorboard
+:param info: info to log
+:param global_step: step in training</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.logger.Logger.tensorboard_weights_logger">
+<code class="sig-name descname">tensorboard_weights_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">weights_hist</span></em>, <em class="sig-param"><span class="n">global_step</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.logger.Logger.tensorboard_weights_logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="processor.utils.logger.Logger.top_bottom_actions">
+<code class="sig-name descname">top_bottom_actions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ground_truth</span></em>, <em class="sig-param"><span class="n">prediction</span></em>, <em class="sig-param"><span class="n">nb_top_bottoms</span></em>, <em class="sig-param"><span class="n">classes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.logger.Logger.top_bottom_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print nb_top_bottoms action class along with their classification rate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ground_truth</strong> – </p></li>
+<li><p><strong>predictions</strong> – </p></li>
+<li><p><strong>nb_top_bottoms</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-processor.utils.utils">
+<span id="processor-utils-utils-module"></span><h2>processor.utils.utils module<a class="headerlink" href="#module-processor.utils.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="processor.utils.utils.DictAction">
+<em class="property">class </em><code class="sig-prename descclassname">processor.utils.utils.</code><code class="sig-name descname">DictAction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">option_strings</span></em>, <em class="sig-param"><span class="n">dest</span></em>, <em class="sig-param"><span class="n">nargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.utils.DictAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">argparse.Action</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="processor.utils.utils.import_class">
+<code class="sig-prename descclassname">processor.utils.utils.</code><code class="sig-name descname">import_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">import_str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.utils.utils.import_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a class from a string including module and class.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-processor.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-processor.utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Hierarchical_1D_CNN_for_inertial_action_recognition</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Nicolas Lemieux.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/processor.utils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

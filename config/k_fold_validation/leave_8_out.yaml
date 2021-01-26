@@ -1,0 +1,51 @@
+# General
+work_dir: ./work_dir/leave_8_out
+num_epoch: 250
+save_interval: 200
+eval_interval: 1
+
+# Dataloader
+train_batch_size: 16
+test_batch_size: 16
+take_n_examples: -1
+train_subjects: [1,2,3,4,5,6,7]
+
+# Model
+input_window_size: [326, 6]
+model: model.hierarchical_CNN_SeLU.Model
+model_args:
+  f_1: 32
+  f_2: 32
+  f_3: 32
+  f_4: 32
+  f_5: 32
+
+  nb_class: 27
+  bin_layer: 256
+  multi_layer: 512
+
+
+# Optimizer
+optimizer: torch.optim.SGD
+#optimizer: torch.optim.adam
+loss: torch.nn.CrossEntropyLoss
+binary_weights: [0.0385, 1]
+optimizer_args:
+  lr: 0.01
+
+# Schedule
+num_worker: 4
+scheduler: torch.optim.lr_scheduler.ExponentialLR
+scheduler_args:
+  gamma: 0.99
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>processor package &#8212; Hierarchical_1D_CNN_for_inertial_action_recognition Final documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="processor-package">
+<h1>processor package<a class="headerlink" href="#processor-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="processor.utils.html">processor.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="processor.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processor.utils.html#module-processor.utils.FLOPs_counter">processor.utils.FLOPs_counter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processor.utils.html#module-processor.utils.argument_parser">processor.utils.argument_parser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processor.utils.html#module-processor.utils.file_io">processor.utils.file_io module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processor.utils.html#module-processor.utils.logger">processor.utils.logger module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processor.utils.html#module-processor.utils.utils">processor.utils.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processor.utils.html#module-processor.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-processor.processor_MHAD">
+<span id="processor-processor-mhad-module"></span><h2>processor.processor_MHAD module<a class="headerlink" href="#module-processor.processor_MHAD" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="processor.processor_MHAD.Processor">
+<em class="property">class </em><code class="sig-prename descclassname">processor.processor_MHAD.</code><code class="sig-name descname">Processor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">argv</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="processor.utils.html#processor.utils.argument_parser.ArgumentParser" title="processor.utils.argument_parser.ArgumentParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">processor.utils.argument_parser.ArgumentParser</span></code></a></p>
+<p>Inspired by <a class="reference external" href="https://github.com/yysijie/st-gcn">https://github.com/yysijie/st-gcn</a>
+Processor that handles</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Training of the model</p></li>
+<li><p>Testing / evaluation of the model</p></li>
+<li><p>Initializations of the whole training procedure</p></li>
+<li><p>Logging</p></li>
+<li><p>Load &amp; save results / models</p></li>
+</ul>
+</div></blockquote>
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.calculate_acc_bin">
+<code class="sig-name descname">calculate_acc_bin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">binary_prediction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.calculate_acc_bin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate top-k accuracy
+:param k: k
+:return: accuracy</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.calculate_meta_precision_and_recall">
+<code class="sig-name descname">calculate_meta_precision_and_recall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meta_prediction_frag</span></em>, <em class="sig-param"><span class="n">meta_labels_frag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.calculate_meta_precision_and_recall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.calculate_precision">
+<code class="sig-name descname">calculate_precision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">binary_predictions</span></em>, <em class="sig-param"><span class="n">binary_labels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.calculate_precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate Precision (true_positive / (true_pos + false_pos)
+:return: precision</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.calculate_recall">
+<code class="sig-name descname">calculate_recall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">binary_predictions</span></em>, <em class="sig-param"><span class="n">binary_labels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.calculate_recall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate recall (true_positive / (true_pos + False_neg)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Recall ratio</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.calculate_topk">
+<code class="sig-name descname">calculate_topk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.calculate_topk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate top-k accuracy
+:param k: k
+:return: accuracy</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.count_parameters">
+<code class="sig-name descname">count_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.count_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.create_meta_binary_labels">
+<code class="sig-name descname">create_meta_binary_labels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_multiclass</span></em>, <em class="sig-param"><span class="n">num_class</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.create_meta_binary_labels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.device">
+<code class="sig-name descname">device</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set used device: CPU / single GPU
+:return: used devuce</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.freeze_layers">
+<code class="sig-name descname">freeze_layers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.freeze_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Freeze the specified layers of the model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.get_parser">
+<em class="property">static </em><code class="sig-name descname">get_parser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">add_help</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.get_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extended argument parser with general options for the processor
+:param add_help: boolean flag to enable command line help
+:return: parser</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.load_categorie_names">
+<code class="sig-name descname">load_categorie_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.load_categorie_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.load_data">
+<code class="sig-name descname">load_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.load_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load data and use specified data feeder and data sampler
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.load_loss">
+<code class="sig-name descname">load_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">weight</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.load_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load specified loss
+:return: loss</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.load_model">
+<code class="sig-name descname">load_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dummy_input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.load_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load &amp; initialize model specified in configuration
+:return: initialized model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.load_optimizer">
+<code class="sig-name descname">load_optimizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.load_optimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load specified optimizer
+:return: optimizer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.load_scheduler">
+<code class="sig-name descname">load_scheduler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.load_scheduler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load specified scheduler
+:return: scheduler</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.load_weights">
+<code class="sig-name descname">load_weights</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.load_weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load specified weights into model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.show_epoch_info">
+<code class="sig-name descname">show_epoch_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.show_epoch_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show informations per epoch</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.show_eval_info">
+<code class="sig-name descname">show_eval_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.show_eval_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show extended informations after an evaluation / testing phase</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.show_iter_info">
+<code class="sig-name descname">show_iter_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">progress_bar</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.show_iter_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show informations per iteration
+:param progress_bar: tqdm progress bar</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start training of an model
+This function unifies the whole procedure on a very high level with</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>model training</p></li>
+<li><p>model evaluation</p></li>
+<li><p>saving weights</p></li>
+<li><p>parametrization of optimizer / scheduler</p></li>
+<li><p>logging</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.test">
+<code class="sig-name descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test model and print out / store statistics</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.train">
+<code class="sig-name descname">train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train model an epoch
+This function is the real training of the model with</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>forward pass</p></li>
+<li><p>backward pass</p></li>
+<li><p>optimization of weights</p></li>
+<li><p>logging of single iterations</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="processor.processor_MHAD.Processor.update_progress_bar">
+<code class="sig-name descname">update_progress_bar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">progress_bar</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.Processor.update_progress_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update progress bar during training / testing
+:param progress_bar: tqdm progress bar</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="processor.processor_MHAD.one_hot_embedding">
+<code class="sig-prename descclassname">processor.processor_MHAD.</code><code class="sig-name descname">one_hot_embedding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labels</span></em>, <em class="sig-param"><span class="n">num_classes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#processor.processor_MHAD.one_hot_embedding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Embedding labels to one-hot form.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>labels: (LongTensor) class labels, sized [N,].
+num_classes: (int) number of classes.</p>
+</dd>
+<dt>Returns:</dt><dd><p>(tensor) encoded labels, sized [N, #classes].</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-processor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-processor" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Hierarchical_1D_CNN_for_inertial_action_recognition</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Nicolas Lemieux.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/processor.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
